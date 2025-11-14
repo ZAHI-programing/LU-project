@@ -1,0 +1,256 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Perfume</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+        <style>
+            
+            .Dark_Light{
+                position: absolute;
+                left : 5%;
+                border-radius: 100%;
+                margin:auto;
+                padding: auto;
+                background-color: white;
+                border-width: 2;
+
+            }
+            img{
+                width: 50px;
+                height: 50px;
+            }
+            .signIn{
+                position: absolute;
+                right: 5%;
+                border-radius: 100%;
+                width: 50px;
+                height: 50px;
+            }
+            .by{
+                position: absolute;
+                right: 50%;
+                border-radius: 100%;
+                border-style: double;
+                width: 50px;
+                height: 50px;
+            }
+
+            .men-section {
+                display: grid;
+                background-color:#778da9 ;
+                grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
+                gap: 20px;
+                padding: 20px;
+                max-width: 1200px;  /* limit width */
+                margin: 0 auto; 
+                margin-top: 0px;
+                
+                
+                }
+
+                /* Medium screens → 3 columns */
+                @media (max-width: 992px) {
+                .men-section {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                }
+
+                /* Small screens → 2 columns */
+                @media (max-width: 600px) {
+                .men-section {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                }
+
+                .product {
+                background: #f3f3f3;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                height: 200px;
+                text-align: center;
+                transition: transform 0.25s ease, box-shadow 0.25s ease;
+                cursor: pointer;
+            }
+
+            .product:hover {
+                transform: translateY(-5px) scale(1.03);   /* small lift + scale */
+                box-shadow: 0 10px 20px rgba(0,0,0,0.15);  /* smooth shadow */
+                }
+
+            .women-section {
+                display: grid;
+                background-color: #ffc8dd ;
+                grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
+                gap: 20px;
+                padding: 20px;
+                max-width: 1200px;  /* limit width */
+                margin: 0 auto; 
+                margin-top: 0px;
+                
+                
+                }
+
+                /* Medium screens → 3 columns */
+                @media (max-width: 992px) {
+                .men-section {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                }
+
+                /* Small screens → 2 columns */
+                @media (max-width: 600px) {
+                .men-section {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                }
+
+            .unisex-section {
+                display: grid;
+                background-color: #14213d;
+                grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
+                gap: 20px;
+                padding: 20px;
+                max-width: 1200px;  /* limit width */
+                margin: 0 auto; 
+                margin-top: 0px;
+                
+                
+                }
+
+                /* Medium screens → 3 columns */
+                @media (max-width: 992px) {
+                .men-section {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                }
+
+                /* Small screens → 2 columns */
+                @media (max-width: 600px) {
+                .men-section {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                }
+
+            .women{
+                background-color: #ffc8dd;
+                position: absolute;
+                top: 40%;
+                overflow: scroll;
+                width: 98%;
+                height: 30%;
+            }
+            .unisex{
+                background-color: whitesmoke;
+                position: absolute;
+                top: 70%;
+                width: 98%;
+                overflow: scroll;
+                height: 30%;
+
+
+            }
+            .info{
+                background-color:#778da9;
+                position: block;
+                height: 30%;
+
+
+            }
+            .sections{
+                background-color:#e0e1dd;
+                text-align: center;
+                margin-bottom: 0;
+                margin-top: 0;
+                height: 60px;
+                font-size: 30px;
+                display: flex;
+                justify-content: center;   /* horizontal */
+                align-items: center;
+
+            }
+            .top-bar{
+                height: 60px;
+            }           
+            body{
+                background-color: white;/*rgba(241, 161, 229, 0.637)*/
+                overflow: scroll;
+               
+
+            }
+        </style>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <div class="top-bar">
+        <a href="./web_project/Index.html "><button class="signIn"><h3>login</h3></button></a>
+        <button class="Dark_Light"><img src="./Background.png" alt="hi"></img></button>
+        <a href="by.html"><button class="by">Buy now</button></a>
+        <img src="./image" alt ="perfume 1"></img>
+        </div>
+     
+     
+        <p class="sections">men section</p>
+        <div style="background-color: #778da9;">
+
+        <div class="men-section">
+      
+            
+            <div class="product" >Product 1</div>
+            <div class="product">Product 2</div>
+            <div class="product">Product 3</div>
+            <div class="product">Product 4</div>
+            <div class="product">Product 5</div>
+            <div class="product">Product 6</div>
+            <div class="product">Product 7</div>
+            <div class="product">Product 8</div>
+            <div class="product">Product 9</div>
+            <div class="product">Product 10</div>
+            <div class="product">Product 11</div>
+            <div class="product">Product 12</div>
+        </div>
+        </div>
+        <p class="sections">Women section</p>
+
+        <div style="background-color: #ffc8dd;">
+                <div class="women-section">
+      
+            
+            <div class="product">Product 1</div>
+            <div class="product">Product 2</div>
+            <div class="product">Product 3</div>
+            <div class="product">Product 4</div>
+            <div class="product">Product 5</div>
+            <div class="product">Product 6</div>
+            <div class="product">Product 7</div>
+            <div class="product">Product 8</div>
+            <div class="product">Product 9</div>
+            <div class="product">Product 10</div>
+            <div class="product">Product 11</div>
+            <div class="product">Product 12</div>
+        </div></div>
+
+        <p class="sections">uni-sex section</p>
+
+        <div style="background-color: #14213d;">
+                <div class="unisex-section">
+      
+            
+            <div class="product">Product 1</div>
+            <div class="product">Product 2</div>
+            <div class="product">Product 3</div>
+            <div class="product">Product 4</div>
+ 
+        </div></div>
+        
+
+         </div>
+            <div class="info">
+            <p><strong>info: </strong></p>
+        </div>
+        
+
+    </body>
+</html>
