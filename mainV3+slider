@@ -145,6 +145,21 @@
             transform: translateY(-5px) scale(1.03);
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
+        @keyframes appear{
+            from{
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+        .sections{
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
 
         .sections {
             background-color:#e0e1dd;
@@ -155,6 +170,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        .sectionsBody{
+            background-color:#e0e1dd;
         }
 
         /* ---------------- SLIDER SECTIONS ---------------- */
@@ -270,7 +288,7 @@
     </div>
 
      <!-- ---------------------- WOMEN ---------------------- -->
-    <p class="sections">Women section</p>
+    <div class="sectionsBody"><p class="sections">Women section</p></div>
     <div class="womenBody">
     <div class="women-section">
         <div class="product">Product 1</div><div class="product">Product 2</div>
@@ -283,7 +301,7 @@
     </div>
 
     <!-- ---------------------- UNISEX ---------------------- -->
-    <p class="sections">Uni-sex section</p>
+    <div class="sectionsBody"><p class="sections">Uni-sex section</p></div>
     <div class="unisexBody">
     <div class="unisex-section">
         <div class="product">Product 1</div>
