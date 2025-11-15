@@ -65,6 +65,11 @@
             background-color: #9d9e9b;
             color: white;
         }
+          body.dark .sectionsBody {
+            background-color: #9d9e9b;
+            color: white;
+        }
+
         body.dark .product {
             background-color: #555;
             color: white;
@@ -110,7 +115,7 @@
         .women-section, .womenBody { background-color: #ffc8dd; }
         .unisex-section, .unisexBody { background-color: #D7D1CA; }
 
-        @media (max-width: 992px) {
+        @media (max-width: 1100px) {
             .men-section,
             .women-section,
             .unisex-section {
@@ -118,7 +123,7 @@
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
             .men-section,
             .women-section,
             .unisex-section {
@@ -201,10 +206,11 @@
             }
 
             .client {
-                background-color: white;
+                
                 padding: 20px;
                 border-radius: 10px;
             }
+            
 
             .photoClient {
                 width: 50px;
@@ -224,6 +230,7 @@
                 font-weight: bold;
                 position: relative;
                 top: 0%;
+                color: rgb(82, 212, 255);
             }
 
        /* ---------------- ANIMATION ---------------- */
@@ -262,6 +269,24 @@
             height: 255px;
             padding: 10px;
         }
+    .product img {
+    max-width: 100%;   /* image will not exceed the width of the div */
+    max-height: 100%;  /* image will not exceed the height of the div */
+    object-fit: contain; /* maintain aspect ratio */
+    display: block;    /* removes inline spacing issues */
+    width: 90%;
+    height: 90%;
+}
+.product p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+body.dark .product p{
+    color: white;
+}
     </style>
 </head>
 <body>
@@ -281,40 +306,138 @@
             <img src="./Others/slider/banner-3.jpg" alt="">
         </div>
     </div>
-    <div class="menBody">
+ <div class="menBody">
     <p class="sections">Men section</p>
     <div class="men-section">
-        <div class="product">Product 1</div><div class="product">Product 2</div>
-        <div class="product">Product 3</div><div class="product">Product 4</div>
-        <div class="product">Product 5</div><div class="product">Product 6</div>
-        <div class="product">Product 7</div><div class="product">Product 8</div>
-        <div class="product">Product 9</div><div class="product">Product 10</div>
-        <div class="product">Product 11</div><div class="product">Product 12</div>
+        <div class="product">
+            <img src="Others/products/Rasasi-Hawas-for-Him_-300x300-removebg-preview.png">
+            <p>Rasasi Hawas</p>
+        </div>
+        <div class="product">
+            <img src="Others/products/Tom-Ford-Noir-Extreme-300x300-removebg-preview.png">
+            <p>Tom Ford Noir Extreme</p>
+        </div>
+        <div class="product">
+            <img src="Others/products/Valentino-Uomo-Born-in-Roma-300x300-removebg-preview.png">
+            <p>Valentino Uomo Born in Roma</p>
+        </div>
+        <div class="product">
+            <img src="Others/products/Valentino-Uomo-Born-In-Roma-Coral-Fantasy_-300x300-removebg-preview.png">
+            <p>Valentino Uomo Born in Roma Coral Fantasy</p>
+        </div>
+        <div class="product">
+            <img src="Others/products/Valentino-Uomo-Intense-300x300-removebg-preview.png">
+            <p>Valentino Uomo Intense</p>
+        </div>
+        <div class="product">
+            <img src="Others/products/Versace-Dylan-Blue-Pour-Homme-300x300-removebg-preview.png">
+            <p>Versace Dylan Blue Pour Homme</p>
+        </div>
+        <div class="product">
+            <img src="Others/products/Versace-Eros-Energy_-300x300-removebg-preview.png">
+            <p>Versace Eros Energy</p>
+        </div>
+        <div class="product">
+            <img src="Others/products/Versace-Eros-Flame_-300x300-removebg-preview.png">
+            <p>Versace Eros Flame</p>
+        </div>
+        <div class="product">
+            <img src="Others/products/versace-eros-for-men-300x300-removebg-preview.png">
+            <p>Versace Eros for Men</p>
+        </div>
+        <div class="product">
+            <img src="Others/products/ViktorRolf-Spicebomb-Extreme_-300x300-removebg-preview.png">
+            <p>Viktor & Rolf Spicebomb Extreme</p>
+        </div>
+        <div class="product">
+            <img src="Others/products/yves-saint-laurent-la-nuit-de-lhomme-300x300-removebg-preview.png">
+            <p>Yves Saint Laurent La Nuit de L’Homme</p>
+        </div>
+        <div class="product">
+            <img src="Others/products/yves-saint-laurent-Y_-300x300-removebg-preview.png">
+            <p>Yves Saint Laurent Y</p>
+        </div>
     </div>
-    </div>
+</div>
+
 
      <!-- ---------------------- WOMEN ---------------------- -->
     <div class="sectionsBody"><p class="sections">Women section</p></div>
     <div class="womenBody">
     <div class="women-section">
-        <div class="product">Product 1</div><div class="product">Product 2</div>
-        <div class="product">Product 3</div><div class="product">Product 4</div>
-        <div class="product">Product 5</div><div class="product">Product 6</div>
-        <div class="product">Product 7</div><div class="product">Product 8</div>
-        <div class="product">Product 9</div><div class="product">Product 10</div>
-        <div class="product">Product 11</div><div class="product">Product 12</div>
-    </div>
-    </div>
+       <div class="product">
+    <img src="Others/womenP/Tom-Ford-Velvet-Orchid-300x300-removebg-preview.png">
+    <p>Tom Ford Velvet Orchid</p>
+</div>
+<div class="product">
+    <img src="Others/womenP/Valentino-Donna-Born-In-Roma-300x300-removebg-preview.png">
+    <p>Valentino Donna Born in Roma</p>
+</div>
+<div class="product">
+    <img src="Others/womenP/Valentino-Donna-Born-In-Roma-Intense-300x300-removebg-preview.png">
+    <p>Valentino Donna Born in Roma Intense</p>
+</div>
+<div class="product">
+    <img src="Others/womenP/Valentino-Donna_-300x300-removebg-preview.png">
+    <p>Valentino Donna</p>
+</div>
+<div class="product">
+    <img src="Others/womenP/Versace-Bright-Crystal_-300x300-removebg-preview.png">
+    <p>Versace Bright Crystal</p>
+</div>
+<div class="product">
+    <img src="Others/womenP/Versace-Crystal-Noir_-300x300-removebg-preview.png">
+    <p>Versace Crystal Noir</p>
+</div>
+<div class="product">
+    <img src="Others/womenP/Versace-Eros-Pour-Femme_-300x300-removebg-preview.png">
+    <p>Versace Eros Pour Femme</p>
+</div>
+<div class="product">
+    <img src="Others/womenP/Victorias-Secret-Bombshell_-300x300-removebg-preview.png">
+    <p>Victoria's Secret Bombshell</p>
+</div>
+<div class="product">
+    <img src="Others/womenP/ViktorRolf-Flowerbomb_-300x300-removebg-preview.png">
+    <p>Viktor & Rolf Flowerbomb</p>
+</div>
+<div class="product">
+    <img src="Others/womenP/Yves-Saint-Laurent-Black-Opium_-300x300-removebg-preview.png">
+    <p>Yves Saint Laurent Black Opium</p>
+</div>
+<div class="product">
+    <img src="Others/womenP/Yves-Saint-Laurent-Libre_-300x300-removebg-preview.png">
+    <p>Yves Saint Laurent Libre</p>
+</div>
+<div class="product">
+    <img src="Others/womenP/Yves-Saint-Laurent-Mon-Paris_-300x300-removebg-preview.png">
+    <p>Yves Saint Laurent Mon Paris</p>
+</div>
+
+    </div></div>
 
     <!-- ---------------------- UNISEX ---------------------- -->
     <div class="sectionsBody"><p class="sections">Uni-sex section</p></div>
     <div class="unisexBody">
-    <div class="unisex-section">
-        <div class="product">Product 1</div>
-        <div class="product">Product 2</div>
-        <div class="product">Product 3</div>
-        <div class="product">Product 4</div>
+   <div class="unisex-section"> 
+    <div class="product">
+        <img src="Others/unisexP/Calvin-Klein-CK-One-300x300-Photoroom.png">
+        <p>Calvin Klein CK One</p>
     </div>
+    <div class="product">
+        <img src="Others/unisexP/Giorgio-Armani-Armani-Prive-Vert-Malachite-300x300-Photoroom.png">
+        <p>Giorgio Armani Armani Prive Vert Malachite</p>
+    </div>
+    <div class="product">
+        <img src="Others/unisexP/Gucci-Oud-300x300-Photoroom.png">
+        <p>Gucci Oud</p>
+    </div>
+    <div class="product">
+        <img src="Others/unisexP/Kilian-Angels-Share_-300x300-Photoroom.png">
+        <p>Kilian Angels Share</p>
+    </div>
+</div>
+
     </div>
 
   <!-- ---------------------- client ---------------------- -->
@@ -355,6 +478,15 @@
         <p style="position: relative; right: -80%; bottom: 50%;"><strong style="font-size: 200%;">Designed by: <br></strong>Zahi<br>Charbel Rached</p>
         
     </div>
+
+
+    <div style="position: fixed; bottom: 10px; right: 5px; z-index: 1000;">
+    <a href="https://wa.me/YOURNUMBER" target="_blank" style="position: fixed; bottom: 10px; right: 5px; z-index: 1000;">
+    <img src="Others/Photos/Whatsaap.png" 
+         alt="WhatsApp" 
+         style="width: 80px; height: 80px; cursor: pointer;">
+</a>
+</div>
 
     <!-- ---------------------- SCRIPT ---------------------- -->
     <script>
