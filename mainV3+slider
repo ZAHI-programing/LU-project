@@ -77,6 +77,12 @@
         body.dark .unisex-section, body.dark .unisexBody{
             background-color: #97928d;
         }
+        body.dark .client {
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
 
         /* ----------------- GENERAL ----------------- */
 
@@ -131,7 +137,7 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            height: 200px;
+            height: 300px;
             cursor: pointer;
             transition: 0.25s ease;
         }
@@ -183,6 +189,49 @@
     100% { transform: translateX(0); }      /* loop back to first image */
 }
 
+        /* ---------------- client SECTIONS ---------------- */
+            .ClientTestimonials {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+                gap: 20px; /* spacing between items */
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            /* Responsive: 1 column on small screens */
+            @media (max-width: 600px) {
+                .ClientTestimonials {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .client {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            .photoClient {
+                width: 50px;
+                height: 50px;
+                background-color: #ccc;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                top: 1rem;
+                
+            }
+
+            .nameClient {
+                display: inline-block;
+                margin-left: 10px;
+                vertical-align: middle;
+                font-weight: bold;
+                position: relative;
+                top: 0%;
+            }
+
     .info {
             background-color:#778da9;
             height: 255px;
@@ -200,13 +249,14 @@
 
         <button class="buy">Buy Now</button>
     </div>
-
+     <!-- ---------------------- slider wraper---------------------- -->
     <div class="slider-wrapper">
         <div class="slider">
             <img src="slider/banner-1.jpg" alt="">
             <img src="slider/banner-3.jpg" alt="">
         </div>
     </div>
+<!-- ---------------------- MEN ---------------------- -->
     <div class="menBody">
     <p class="sections">Men section</p>
     <div class="men-section">
@@ -243,6 +293,36 @@
     </div>
     </div>
 
+
+    <!-- ---------------------- UNISEX ---------------------- -->
+    <div class="ClientTestimonials">
+        <div class="client">
+            <div>The moment I sprayed Rivello Profumo, I felt like I stepped into a world of elegance. The scent lasts beautifully all day — subtle, sophisticated, and unforgettable.</div>
+            <div>
+                <div class="photoClient"></div>
+                <div class="nameClient">Layla M.</div>
+            </div>
+
+    <!-- ---------------------- client ---------------------- -->
+        </div>
+                <div class="client">
+            <div>The moment I sprayed Rivello Profumo, I felt like I stepped into a world of elegance. The scent lasts beautifully all day — subtle, sophisticated, and unforgettable.</div>
+            <div>
+                <div class="photoClient"></div>
+                <div class="nameClient">Layla M.</div>
+            </div>
+
+        </div>
+                <div class="client">
+            <div>The moment I sprayed Rivello Profumo, I felt like I stepped into a world of elegance. The scent lasts beautifully all day — subtle, sophisticated, and unforgettable.</div>
+            <div>
+                <div class="photoClient"></div>
+                <div class="nameClient">Layla M.</div>
+            </div>
+
+        </div>
+    </div>
+
     <!-- ---------------------- INFO ---------------------- -->
     <div class="info">
         <h3>For more info contact us:</h3>
@@ -261,4 +341,3 @@
     </script>
 </body>
 </html>
-
