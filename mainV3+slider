@@ -200,14 +200,13 @@
 
         <button class="buy">Buy Now</button>
     </div>
-     <!-- ---------------------- slider wraper---------------------- -->
+
     <div class="slider-wrapper">
         <div class="slider">
             <img src="slider/banner-1.jpg" alt="">
             <img src="slider/banner-3.jpg" alt="">
         </div>
     </div>
-<!-- ---------------------- MEN ---------------------- -->
     <div class="menBody">
     <p class="sections">Men section</p>
     <div class="men-section">
