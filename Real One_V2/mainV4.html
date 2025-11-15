@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Perfume</title>
+    <style>
+         /* ---------------- HEADER ---------------- */
+
+        .login {
+            background-color: #d59bff;
+        }
+        .buy {
+            background-color: #ffa3a3;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: white;
+            box-shadow: 0 0 10px #ccc;
+            position: sticky;
+            top: 0;
+       
+            border-width: 1px;
+            z-index: 100;
+
+      
+        }
+        .header button {
+            border: none;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* --------- DARK / LIGHT MODE BUTTON -------- */
+         .Dark_Light {
+            border: none;
+            background-color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .Dark_Light:hover {
+            transform: scale(1.15) rotate(10deg);
+        }
+
+        /* ------------- DARK MODE THEME ------------- */
+
+        body.dark {
+            background-color: #222;
+            color: white;
+        }
+        body.dark .header {
+            background-color: #333;
+            box-shadow: 0 0 10px black;
+        }
+        body.dark .sections {
+            background-color: #9d9e9b;
+            color: white;
+        }
+        body.dark .product {
+            background-color: #555;
+            color: white;
+        }
+        body.dark .info{
+            background-color: #536376;
+        }
+        body.dark .women-section ,body.dark .womenBody{ background-color: #b38c9b; }
+        body.dark .men-section, body.dark .menBody { background-color: #536376; }
+        body.dark .unisex-section, body.dark .unisexBody{
+            background-color: #97928d;
+        }
+
+        /* ----------------- GENERAL ----------------- */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* ---------------- GRID SECTIONS ---------------- */
+
+        .men-section,
+        .women-section,
+        .unisex-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .men-section, .menBody { background-color: #778da9; }
+        .women-section, .womenBody { background-color: #ffc8dd; }
+        .unisex-section, .unisexBody { background-color: #D7D1CA; }
+
+        @media (max-width: 992px) {
+            .men-section,
+            .women-section,
+            .unisex-section {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .men-section,
+            .women-section,
+            .unisex-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .product {
+            background: #f3f3f3;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            height: 300px;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+        .product:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .sections {
+            background-color:#e0e1dd;
+            text-align: center;
+            margin: 0;
+            height: 60px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ---------------- SLIDER SECTIONS ---------------- */
+        .slider-wrapper {
+            position: relative;
+            max-width: 70rem;
+            margin: 2rem auto;
+            aspect-ratio: 3/1;      
+            overflow: hidden;        
+            border-radius: 0.5rem;
+            box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.25);
+        }
+
+        .slider {
+            display: flex;
+            width: 200%;             
+            height: 100%;
+            animation: slide 12s infinite; /* total 12s for 2 images */
+        }
+
+        .slider img {
+            width: 60%;             
+            height: auto;
+            object-fit: cover;
+        }
+
+      @keyframes slide {
+    0%   { transform: translateX(0); }      /* first image fully visible */
+    45%  { transform: translateX(0); }      /* pause on first image */
+    50%  { transform: translateX(-58%); }  /* slide to second image */
+    95%  { transform: translateX(-58%); }  /* pause on second image */
+    100% { transform: translateX(0); }      /* loop back to first image */
+}
+
+        /* ---------------- client SECTIONS ---------------- */
+            .ClientTestimonials {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+                gap: 20px; /* spacing between items */
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            /* Responsive: 1 column on small screens */
+            @media (max-width: 600px) {
+                .ClientTestimonials {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .client {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            .photoClient {
+                width: 50px;
+                height: 50px;
+                background-color: #ccc;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                top: 1rem;
+                
+            }
+
+            .nameClient {
+                display: inline-block;
+                margin-left: 10px;
+                vertical-align: middle;
+                font-weight: bold;
+                position: relative;
+                top: 0%;
+            }
+
+       /* ---------------- ANIMATION ---------------- */
+        @keyframes appear{
+            from{
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+        .sections{
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+
+        .sections {
+            background-color:#e0e1dd;
+            text-align: center;
+            margin: 0;
+            height: 60px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sectionsBody{
+            background-color:#e0e1dd;
+        }
+
+    .info {
+            background-color:#778da9;
+            height: 255px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+      <!-- ---------------------- HEADER ---------------------- -->
+    <div class="header">
+        <a href="./Others/signIn.html"><button class="login">Login</button></a>
+
+        <!-- 🔥 Dark/Light button in the middle -->
+        <button class="Dark_Light">🌓</button>
+
+        <button class="buy">Buy Now</button>
+    </div>
+
+    <div class="slider-wrapper">
+        <div class="slider">
+            <img src="./Others/slider/banner-1.jpg" alt="">
+            <img src="./Others/slider/banner-3.jpg" alt="">
+        </div>
+    </div>
+    <div class="menBody">
+    <p class="sections">Men section</p>
+    <div class="men-section">
+        <div class="product">Product 1</div><div class="product">Product 2</div>
+        <div class="product">Product 3</div><div class="product">Product 4</div>
+        <div class="product">Product 5</div><div class="product">Product 6</div>
+        <div class="product">Product 7</div><div class="product">Product 8</div>
+        <div class="product">Product 9</div><div class="product">Product 10</div>
+        <div class="product">Product 11</div><div class="product">Product 12</div>
+    </div>
+    </div>
+
+     <!-- ---------------------- WOMEN ---------------------- -->
+    <div class="sectionsBody"><p class="sections">Women section</p></div>
+    <div class="womenBody">
+    <div class="women-section">
+        <div class="product">Product 1</div><div class="product">Product 2</div>
+        <div class="product">Product 3</div><div class="product">Product 4</div>
+        <div class="product">Product 5</div><div class="product">Product 6</div>
+        <div class="product">Product 7</div><div class="product">Product 8</div>
+        <div class="product">Product 9</div><div class="product">Product 10</div>
+        <div class="product">Product 11</div><div class="product">Product 12</div>
+    </div>
+    </div>
+
+    <!-- ---------------------- UNISEX ---------------------- -->
+    <div class="sectionsBody"><p class="sections">Uni-sex section</p></div>
+    <div class="unisexBody">
+    <div class="unisex-section">
+        <div class="product">Product 1</div>
+        <div class="product">Product 2</div>
+        <div class="product">Product 3</div>
+        <div class="product">Product 4</div>
+    </div>
+    </div>
+
+  <!-- ---------------------- client ---------------------- -->
+    <div class="ClientTestimonials">
+        <div class="client">
+            <div>The moment I sprayed Rivello Profumo, I felt like I stepped into a world of elegance. The scent lasts beautifully all day — subtle, sophisticated, and unforgettable.</div>
+            <div>
+                <div class="photoClient"><img src="./Others/Photos/untitled 2.png" style="border: radius 100px;"></div>
+                <div class="nameClient">Layla M.</div>
+            </div>
+
+
+        </div>
+                <div class="client">
+            <div>It’s not just a perfume, it’s a signature. Every time I wear Rivello, people ask me what fragrance I’m wearing. It became my identity.</div>
+            <div>
+                <div class="photoClient"><img src="./Others/Photos/untitled.png"></div>
+                <div class="nameClient">Karim A.</div>
+            </div>
+
+        </div>
+                <div class="client">
+            <div>I’ve tried so many perfumes, but Rivello Profumo stands out. The balance between warmth and freshness is perfection — pure luxury in a bottle.</div>
+            <div>
+                <div class="photoClient"><img src="./Others/Photos/untitled3.png"></div>
+                <div class="nameClient">Nadia R.</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ---------------------- INFO ---------------------- -->
+    <div class="info">
+        <h3>For more info contact us:</h3>
+        <img src="./Others/Photos/download.jpg"><spam style="position: relative; bottom: 6%;"> My Instagram</spam><br>
+        <img src="./Others/Photos/128px-Facebook_Logo_2023.png" alt="Facebook"><spam style="position: relative; bottom: 6%;"> My Facebook</spam><br>
+        <img src ="./Others/Photos/cbdba89328df172953c7be4350a0248f.png" alt ="Location" ><spam style="position: relative;  bottom: 6%; ; min-width: auto;">My Location</spam><br>
+        <p style="position: relative; right: -80%; bottom: 50%;"><strong style="font-size: 200%;">Designed by: <br></strong>Zahi<br>Charbel Rached</p>
+        
+    </div>
+
+    <!-- ---------------------- SCRIPT ---------------------- -->
+    <script>
+        const toggle = document.querySelector('.Dark_Light');
+        toggle.onclick = () => {
+            document.body.classList.toggle('dark');
+        };
+    </script>
+</body>
+</html>
+
