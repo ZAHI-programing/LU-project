@@ -292,4 +292,23 @@ body.dark .product p{
 .product:hover .add-to-buy {
     opacity: 1;
 }
+
+.alert-box {
+    position: fixed;
+    top: 20px;
+    right: -500px; 
+    padding: 15px 22px;
+    background: #28a745;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: right 0.6s ease;
+    z-index: 1000;
+}
+
+.alert-show {
+    right: 20px !important;
+}
+
   
