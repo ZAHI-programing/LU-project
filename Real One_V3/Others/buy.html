@@ -84,6 +84,23 @@
     <a href="./buy.html"><button id="reset-cart">Reset Cart</button></a>
 </div>
 
+<!-- BUY BUTTON -->
+<div style="margin-top: 20px; text-align: center;">
+    <button id="buy-now" style="
+        padding: 12px 25px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: 0.2s;
+    ">
+        Buy Now
+    </button>
+</div>
+
+    
     <div class="footer">
         <h3 class="footer1"><span style="font-family: 'Courier New', monospace;">Designed by <br>Zahi & Charbel Rached</span></h3>
     </div>
@@ -133,9 +150,24 @@ document.getElementById("reset-cart").addEventListener("click", () => {
 });
 
 loadCart();
+
+// BUY BUTTON
+document.getElementById("buy-now").addEventListener("click", () => {
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
+
+    alert("Thank you for your purchase!");
+    localStorage.removeItem("cart");
+    cart = [];
+    loadCart();
+});
+
 </script>
 
 
 
   </body>
 </html>
+
