@@ -252,19 +252,21 @@
         </div>
     </div>
 
-
     <div id="success-alert" class="alert-box">
     Product added to your cart!
     </div>
-    
+
     <!-- ---------------------- INFO ---------------------- -->
     <div class="info">
         <h3>For more info contact us:</h3>
         <img src="./Others/Photos/download.jpg"><spam style="position: relative; bottom: 6%;"> My Instagram</spam><br>
         <img src="./Others/Photos/128px-Facebook_Logo_2023.png" alt="Facebook"><spam style="position: relative; bottom: 6%;"> My Facebook</spam><br>
         <img src ="./Others/Photos/cbdba89328df172953c7be4350a0248f.png" alt ="Location" ><spam style="position: relative;  bottom: 6%; ; min-width: auto;">My Location</spam><br>
-        <p style="position: relative; right: -80%; bottom: 50%;"><strong style="font-size: 200%;">Designed by: <br></strong>Zahi<br>Charbel Rached</p>
-        
+
+        <div style="position: relative; text-align: center; bottom: 3rem; ">
+        <p style="margin-bottom: 0px ;">design by</p>
+        <p style="margin-top: 5px ;"> Zahi Chalhoub <br>& Charbel Rached</p>
+        </div>
     </div>
 
 
@@ -276,51 +278,8 @@
 </a>
 </div>
 
+    <script src="mainV5.js"></script>
     <!-- ---------------------- SCRIPT ---------------------- -->
-    <script>
-        const toggle = document.querySelector('.Dark_Light');
-        toggle.onclick = () => {
-            document.body.classList.toggle('dark');
-        };
-    </script>
-    <script>
-function showAlert(id, timeout = 2500) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.classList.add("alert-show");
-    setTimeout(() => {
-        el.classList.remove("alert-show");
-    }, timeout);
-}
-        
-// Load existing cart or create empty one
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-// Listen for clicks on all buy icons
-document.querySelectorAll(".product .add-to-buy").forEach(icon => {
-    icon.addEventListener("click", function (e) {
-        e.stopPropagation();
-
-        const productDiv = this.closest(".product");
-        const name = productDiv.getAttribute("data-name");
-        const img = productDiv.querySelector("img:not(.add-to-buy)").src;
-
-        const product = {
-            name: name,
-            price: 12,
-            img: img
-        };
-
-        cart.push(product);
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        // Show custom success box
-        showAlert("success-alert");
-        document.getElementById("success-alert").textContent = name + " added to your cart!";
-    });
-});
-
-</script>
 
 </body>
 </html>

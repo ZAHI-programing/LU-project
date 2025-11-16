@@ -292,7 +292,7 @@ body.dark .product p{
 .product:hover .add-to-buy {
     opacity: 1;
 }
-
+  
 .alert-box {
     position: fixed;
     top: 20px;
@@ -311,4 +311,3 @@ body.dark .product p{
     right: 20px !important;
 }
 
-  
