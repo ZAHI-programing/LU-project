@@ -1,81 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>BUY</title>
+<html>
+  <head>
+
+
     <style>
-        body{
-            margin:0;
-            padding:0;
-            transition:0.3s;
-        }
-        .light_mode{
-            background-color: rgb(236, 236, 236);
-            color: #000;
-        }
-        .dark_mode{
-            background-color: #222;
-            color: #fff;
-        }
-        *{
-            box-sizing: border-box;
-        }
-        .header{
-            height: 60px;
-            background-color: rgb(216, 215, 215);
-            text-align: center;
-            border-style: double;
-            position: relative;
-        }
-
-        .dark_mode .header{
-            background-color: #444;
-        }
-
-        .header1{
-            margin: 0;
-            line-height: 60px;
-            font-style: italic;
-        }
-
-        .button_back,.button_signIn,.mode_btn{
-            position: absolute;
-            top: 15px;
-            height: 30px;
-            width: 80px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .button_back{
-            left: 20px;
-            background-color: rgb(248, 132, 132);
-        }
-        .button_back:hover{background-color:red;}
-
-        .button_signIn{
-            right: 20px;
-            background-color: rgb(245, 129, 52);
-        }
-        .button_signIn:hover{
-            background-color: orange;
-        }
-        .mode_btn{
-            border-style:none  ;
-            position:relative;
-            bottom: 14%;
-            left:auto;
-            top: 4%;
-            transform: translateX(-50%);
-            background-color: #999;
-            z-index: 1;
-        }
-        .mode_btn:hover{
-            background-color: #777;
-        }
-
         .footer{
             background-color: rgb(175, 175, 175);
             text-align: center;
@@ -90,110 +18,124 @@
         .dark_mode .footer{
             background-color: #555;
         }
-
-        .content{
-            margin: 120px auto;
-            padding: 20px;
-            background-color: rgba(199, 199, 199, 0.7);
-            border-radius: 20px;
-            max-width: 400px;
-            transition:0.3s;
-        }
-
-        .dark_mode .content{
-            background-color: rgba(100,100,100,0.5);
-        }
-
-        label{
-            display:block;
-            margin-top:20px;
-            font-size: large;
-            font-family: 'Courier New', monospace;
-        }
-
-        input[type="number"]{
-            display:block;
-            background-color: rgb(243, 243, 243);
-            border-radius: 20px;
-            width: 80px;
-            padding-left: 10px;
-            margin-top: 10px;
-        }
-
-        input[type="range"]{
-            width: 100%;
-            margin-top: 10px;
-        }
-        .dark_mode input[type="number"]{
-            background-color:#ddd;
-            color:#000;
-        }
-        .dark_mode input[type="range"]{
-            filter: brightness(1.2);
-        }
-        .clear{
-            border-radius: 10px;
-            border-style: none;
-            margin: auto;
-            padding-right: 10px;
-            padding-left: 10px;
-            font-size: larger;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .submit{
-            border-radius: 10px;
-            border-style: none;
-            margin: auto;
-            padding-right: 10px;
-            padding-left: 10px;
-            font-size: larger;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            position: relative;
-            right: -55%;
-            
-        }
-    </style>
-
-    <script>
-        function toggleMode(){
-            const body = document.body;
-            body.classList.toggle('dark_mode');
-            body.classList.toggle('light_mode');
-        }
-    </script>
-</head>
-<body class="light_mode">
-
-    <div class="header">
         
-        <h1 class="header1"><strong>Buy</strong></h1>
-        <a href="/mainV4.html"><button class="button_back">Back</button></a>
-        <a href="./signIn.html"><button class="button_signIn">Sign In</button></a>
-    </div>
+#cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: #f3f3f3;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.remove-btn {
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.remove-btn:hover {
+    background-color: #e60000;
+}
+
+#reset-cart {
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+#reset-cart:hover {
+    background-color: #e60000;
+}
+</style>
+
+  </head>
+  <body>
+   <h2>Your Cart</h2>
+<div id="cart-items"></div>
+<h3 id="total"></h3>
+
+<!-- RESET BUTTON -->
+<div style="margin-top: 20px; text-align: center;">
+    <a href="./buy.html"><button id="reset-cart">Reset Cart</button></a>
+</div>
 
     <div class="footer">
         <h3 class="footer1"><span style="font-family: 'Courier New', monospace;">Designed by <br>Zahi & Charbel Rached</span></h3>
     </div>
 
-    <div class="content" autocorrect="on">
-        <label>Input the quantity:
-            <input type="number">
-        </label>
 
-        <label>Input the product number:
-            <input type="number">
-        </label>
+<script>
+// Load cart from localStorage or create empty array
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        <label>Rate the perfume:
-            <input type="range">
-        </label>
-        <label>
-            <a href="./buy.html"><button class="clear">Clear</button></a>
-            <a><button class="submit">Submit</button></a>
-            <button class="mode_btn" onclick="toggleMode()">Mode</button>
-        </label>
-    </div>
+function loadCart() {
+    const container = document.getElementById("cart-items");
+    container.innerHTML = "";
 
-    
-</body>
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        total += item.price;
+
+        const div = document.createElement("div");
+        div.className = "cart-item";
+        div.innerHTML = `
+            <img src="${item.img}" alt="${item.name}">
+            <p>${item.name} — $${item.price}</p>
+            <button class="remove-btn" data-index="${index}">Remove</button>
+        `;
+        container.appendChild(div);
+    });
+
+    document.getElementById("total").textContent = "Total: $" + total;
+
+    // Add event listeners for remove buttons
+    document.querySelectorAll(".remove-btn").forEach(btn => {
+        btn.addEventListener("click", function() {
+            const idx = this.getAttribute("data-index");
+            cart.splice(idx, 1); // remove the selected item
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart(); // refresh cart UI
+        });
+    });
+}
+
+// Reset Cart Button
+document.getElementById("reset-cart").addEventListener("click", () => {
+    localStorage.removeItem("cart"); // clear localStorage
+    cart = [];                        // clear cart array in memory
+    loadCart();                       // refresh cart UI
+});
+
+loadCart();
+</script>
+
+
+
+  </body>
 </html>

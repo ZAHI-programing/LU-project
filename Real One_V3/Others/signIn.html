@@ -17,7 +17,6 @@
             transition: background 0.6s ease, color 0.6s ease;
         }
 
-
         .light-mode {
             background: linear-gradient(135deg, #f2f2f2, #ffffff);
             color: #000;
@@ -90,38 +89,103 @@
             background: #444;
             margin-top: 15px;
         }
+
+        /* Alert Box */
+        .alert-box{
+            position: fixed;
+            top: 20px;
+            right: -200px; /* fixed */
+            padding: 15px 22px;
+            background: #28a745;
+            color: white;
+            border-radius: 10px;
+            font-size: 16px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            transition: right 0.6s ease;
+            z-index: 1000;
+        }
+
+        .alert-show{
+            right: 20px !important;
+        }
+
+        .alert-error{
+            background: #d62828 !important;
+        }
     </style>
-    
 </head>
 <body class="light-mode">
 
-
+    <div id="alert" class="alert-box">Test</div>
 
     <div class="form-container">
         <h1>Enter Data</h1>
+
         <label for="name">Enter your name:</label>
         <input id="name" name="name" type="text" placeholder="Your name">
+
         <label for="age">Enter your age:</label>
         <input id="age" name="age" type="number" placeholder="Your age">
-        <label for ="email">Enter your email adress</label>
-        <input type="text" , placeholder="Your email">
-        <label for="gender">Enter your gender: </label>
-         <p>
-            <input name="gender" type="radio">Male
-            <input name="gender" type="radio">Female
-            <input name="gender" type="radio">Prefer not to say [ :) ]
+
+        <label for="email">Enter your email address:</label>
+        <input id="email" name="email" type="text" placeholder="Your email">
+
+        <label for="gender">Enter your gender:</label>
+        <p>
+            <input name="gender" value="Male" type="radio"> Male
+            <input name="gender" value="Female" type="radio"> Female
+            <input name="gender" value="None" type="radio"> Prefer not to say
         </p>
-        <button style="width: 49%;">Submit</button>
-        <button id="resetbutton" style="width: 49%;">Reset</button>
+
+        <button id="submitBtn" style="width: 49%;">Submit</button>
+        <a href="./signIn.html"><button style="width: 49%;">Reset</button></a>
+
         <button id="toggle-mode">Switch Dark / Light Mode</button>
     </div>
-    
+
 
     <script>
         const toggleBtn = document.getElementById("toggle-mode");
+        const submitBtn = document.getElementById("submitBtn");
+        const alertBox = document.getElementById("alert");
 
         toggleBtn.onclick = () => {
             document.body.classList.toggle("light-mode");
+        };
+
+        function showAlert(message, success = true){
+            alertBox.innerText = message;
+
+            // Reset classes
+            alertBox.classList.remove("alert-error");
+            alertBox.classList.remove("alert-show");
+
+            if(!success){
+                alertBox.classList.add("alert-error");
+            }
+
+            // Show
+            setTimeout(() => {
+                alertBox.classList.add("alert-show");
+            }, 10);
+
+            // Hide
+            setTimeout(() => {
+                alertBox.classList.remove("alert-show");
+            }, 2500);
+        }
+
+        submitBtn.onclick = () => {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let email = document.getElementById("email").value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+
+            if(name === "" || age === "" || email === "" || !gender){
+                showAlert("❌ Please fill all fields!", false);
+            } else {
+                showAlert("✅ Submitted successfully!", true);
+            }
         };
     </script>
 
