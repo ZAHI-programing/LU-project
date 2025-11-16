@@ -71,6 +71,29 @@
 #reset-cart:hover {
     background-color: #e60000;
 }
+
+.alert-box{
+    position: fixed;
+    top: 20px;
+    right: -270px; /* hidden */
+    padding: 15px 22px;
+    background: #28a745;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: right 0.6s ease;
+    z-index: 1000;
+}
+
+.alert-show{
+    right: 20px !important;
+}
+
+.alert-error{
+    background: #d62828 !important;
+}
+
 </style>
 
   </head>
@@ -100,10 +123,19 @@
     </button>
 </div>
 
-    
+
     <div class="footer">
         <h3 class="footer1"><span style="font-family: 'Courier New', monospace;">Designed by <br>Zahi & Charbel Rached</span></h3>
     </div>
+
+<!-- alert boxes -->
+<div id="success-alert" class="alert-box" role="status" aria-live="polite">
+  Purchase completed successfully!
+</div>
+
+<div id="error-alert" class="alert-box alert-error" role="alert" aria-live="assertive">
+  Your cart is empty.
+</div>
 
 
 <script>
@@ -151,18 +183,39 @@ document.getElementById("reset-cart").addEventListener("click", () => {
 
 loadCart();
 
+// assumes you have: let cart = JSON.parse(localStorage.getItem("cart")) || [];
+// and a function loadCart() that redraws the cart
+
+function showAlert(id, timeout = 3000) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.add('alert-show');
+  // remove after timeout
+  setTimeout(() => el.classList.remove('alert-show'), timeout);
+}
+
 // BUY BUTTON
-document.getElementById("buy-now").addEventListener("click", () => {
-    if (cart.length === 0) {
-        alert("Your cart is empty.");
-        return;
+const buyBtn = document.getElementById("buy-now");
+if (buyBtn) {
+  buyBtn.addEventListener("click", () => {
+    // refresh cart from localStorage (in case it's modified elsewhere)
+    cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (!cart || cart.length === 0) {
+      showAlert('error-alert', 3000);
+      return;
     }
 
-    alert("Thank you for your purchase!");
+    // success flow: show green sliding alert, clear cart
+    showAlert('success-alert', 3000);
+
     localStorage.removeItem("cart");
     cart = [];
     loadCart();
-});
+  });
+}
+
+
 
 </script>
 
@@ -170,4 +223,3 @@ document.getElementById("buy-now").addEventListener("click", () => {
 
   </body>
 </html>
-
