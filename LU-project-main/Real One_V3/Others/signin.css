@@ -1,0 +1,174 @@
+ .login {
+        background-color: #ffc8dd;
+    }
+    .buy {
+        background-color: #ffc8dd;
+    }
+    body, .header, .footer {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background-color: white;
+        box-shadow: 0 0 10px #ccc;
+        position: sticky;
+        top: 0;
+    
+        border-width: 1px;
+        z-index: 100;
+        margin-bottom: 50px;
+
+
+    
+    }
+    .header button {
+        border: none;
+        padding: 10px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+          .Dark_Light {
+            border: none;
+            background: none;    
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+            body.dark {
+            background-color: #555;
+            color: white;
+        }
+             body.dark .header {
+            background-color: #333;
+            box-shadow: 0 0 10px black;
+        }
+
+
+
+
+
+
+
+
+    
+        .Dark_Light:hover {
+            transform: scale(1.15) rotate(10deg);
+        }
+
+        .thecenter{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .light-mode {
+            background: linear-gradient(135deg, #f2f2f2, #ffffff);
+            color: #000;
+        }
+
+         .form-container{
+            background: #778da9;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            width: 350px;
+            transition: background 0.6s ease, color 0.6s ease;
+        }
+
+        body.dark .form-container{
+            background: #536376;
+        }
+
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        label{
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="number"]{
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            outline: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 15px;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        .light-mode input[type="text"],
+        .light-mode input[type="number"]{
+            background: rgba(0, 0, 0, 0.15);
+            color: black;
+        }
+
+        .buttonData{
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #ff6a00;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .buttonData:hover{
+            background: #ff8800;
+            transform: scale(1.03);
+        }
+
+        #toggle-mode {
+            background: #444;
+            margin-top: 15px;
+        }
+
+        /* Alert Box */
+        .alert-box{
+            position: fixed;
+            top: 20px;
+            right: -200px; /* fixed */
+            padding: 15px 22px;
+            background: #28a745;
+            color: white;
+            border-radius: 10px;
+            font-size: 16px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            transition: right 0.6s ease;
+            z-index: 1000;
+        }
+
+        .alert-show{
+            right: 20px !important;
+        }
+
+        .alert-error{
+            background: #d62828 !important;
+        }
