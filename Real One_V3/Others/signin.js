@@ -1,42 +1,54 @@
-const toggleBtn = document.getElementById("toggle-mode");
-        const submitBtn = document.getElementById("submitBtn");
-        const alertBox = document.getElementById("alert");
+// 1) Apply saved theme when page loads
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+}
 
-        toggleBtn.onclick = () => {
-            document.body.classList.toggle("light-mode");
-        };
+// 2) Toggle button + save theme
+const toggle = document.querySelector('.Dark_Light');
 
-        function showAlert(message, success = true){
-            alertBox.innerText = message;
+toggle.onclick = () => {
+    document.body.classList.toggle('dark');
 
-            // Reset classes
-            alertBox.classList.remove("alert-error");
-            alertBox.classList.remove("alert-show");
+    if (document.body.classList.contains('dark')) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+};
 
-            if(!success){
-                alertBox.classList.add("alert-error");
-            }
+const submitBtn = document.getElementById("submitBtn");
+const alertBox = document.getElementById("alert");
 
-            // Show
-            setTimeout(() => {
-                alertBox.classList.add("alert-show");
-            }, 10);
+// Alert function
+function showAlert(message, success = true){
+    alertBox.innerText = message;
 
-            // Hide
-            setTimeout(() => {
-                alertBox.classList.remove("alert-show");
-            }, 2500);
-        }
+    alertBox.classList.remove("alert-error");
+    alertBox.classList.remove("alert-show");
 
-        submitBtn.onclick = () => {
-            let name = document.getElementById("name").value;
-            let age = document.getElementById("age").value;
-            let email = document.getElementById("email").value;
-            let gender = document.querySelector('input[name="gender"]:checked');
+    if(!success){
+        alertBox.classList.add("alert-error");
+    }
 
-            if(name === "" || age === "" || email === "" || !gender){
-                showAlert("❌ Please fill all fields!", false);
-            } else {
-                showAlert("✅ Submitted successfully!", true);
-            }
-        };
+    setTimeout(() => {
+        alertBox.classList.add("alert-show");
+    }, 10);
+
+    setTimeout(() => {
+        alertBox.classList.remove("alert-show");
+    }, 2500);
+}
+
+// Form submit
+submitBtn.onclick = () => {
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    let email = document.getElementById("email").value;
+    let gender = document.querySelector('input[name="gender"]:checked');
+
+    if(name === "" || age === "" || email === "" || !gender){
+        showAlert("❌ Please fill all fields!", false);
+    } else {
+        showAlert("✅ Submitted successfully!", true);
+    }
+};

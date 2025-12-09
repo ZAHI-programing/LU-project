@@ -1,13 +1,80 @@
- body{
-            background: linear-gradient(135deg, #111, #222);
-            font-family: Arial, Helvetica, sans-serif;
+ .login {
+        background-color: #ffc8dd;
+    }
+    .buy {
+        background-color: #ffc8dd;
+    }
+    body, .header, .footer {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background-color: white;
+        box-shadow: 0 0 10px #ccc;
+        position: sticky;
+        top: 0;
+    
+        border-width: 1px;
+        z-index: 100;
+        margin-bottom: 50px;
+
+
+    
+    }
+    .header button {
+        border: none;
+        padding: 10px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+          .Dark_Light {
+            border: none;
+            background: none;    
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+            body.dark {
+            background-color: #555;
+            color: white;
+        }
+             body.dark .header {
+            background-color: #333;
+            box-shadow: 0 0 10px black;
+        }
+
+
+
+
+
+
+
+
+    
+        .Dark_Light:hover {
+            transform: scale(1.15) rotate(10deg);
+        }
+
+        .thecenter{
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #fff;
-            transition: background 0.6s ease, color 0.6s ease;
         }
 
         .light-mode {
@@ -15,8 +82,8 @@
             color: #000;
         }
 
-        .form-container{
-            background: #536376;
+         .form-container{
+            background: #778da9;
             padding: 30px 40px;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
@@ -25,8 +92,8 @@
             transition: background 0.6s ease, color 0.6s ease;
         }
 
-        .light-mode .form-container{
-            background: #778da9;
+        body.dark .form-container{
+            background: #536376;
         }
 
         h1{
@@ -61,7 +128,7 @@
             color: black;
         }
 
-        button{
+        .buttonData{
             width: 100%;
             padding: 12px;
             border: none;
@@ -73,7 +140,7 @@
             transition: background 0.3s, transform 0.2s;
         }
 
-        button:hover{
+        .buttonData:hover{
             background: #ff8800;
             transform: scale(1.03);
         }
